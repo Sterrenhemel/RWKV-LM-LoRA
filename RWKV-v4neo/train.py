@@ -116,6 +116,7 @@ if __name__ == "__main__":
     parser.add_argument("--devices", default=1, type=int)
     parser.add_argument("--precision", default='bf16', type=str)
     parser.add_argument("--strategy", default='deepspeed_stage_2', type=str)
+    parser.add_argument("--num_nodes", default=1, type=int)
 
     args = parser.parse_args()
 
