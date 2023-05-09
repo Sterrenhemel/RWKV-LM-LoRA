@@ -113,7 +113,6 @@ if __name__ == "__main__":
     parser.add_argument("--lora_dropout", default=0.01, type=float)
     parser.add_argument("--lora_parts", default="att,ln,time", type=str)
 
-    parser = Trainer.add_argparse_args(parser)
     args = parser.parse_args()
 
     ########################################################################################################
@@ -350,7 +349,7 @@ if __name__ == "__main__":
                               strict=False)
 
     trainer = Trainer.from_argparse_args(
-        args,
+        **vars(args),
         callbacks=[train_callback(args)],
     )
 
