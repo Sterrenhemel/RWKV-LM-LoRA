@@ -112,6 +112,10 @@ if __name__ == "__main__":
     parser.add_argument("--lora_alpha", default=32, type=float)
     parser.add_argument("--lora_dropout", default=0.01, type=float)
     parser.add_argument("--lora_parts", default="att,ln,time", type=str)
+    parser.add_argument("--accelerator", default="gpu", type=str)
+    parser.add_argument("--devices", default=1, type=int)
+    parser.add_argument("--precision", default='bf16', type=str)
+    parser.add_argument("--strategy", default='deepspeed_stage_2', type=str)
 
     args = parser.parse_args()
 
